@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import Signupforuser from './Signupforuser';
+import Login from './Login';
 
 
 type SignupProps = {
@@ -132,6 +133,7 @@ const Signup:React.FC<SignupProps> = () => {
 		</form>
         </div>
         <Signupforuser/>
+	
         
         </div>
     );

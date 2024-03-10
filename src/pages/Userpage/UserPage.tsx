@@ -1,4 +1,6 @@
 import React from 'react';
+import SearchSection from './SearchSection';
+import Topbar from '@/components/Topbar/Topbar';
 
 type UserPageProps = {
     
@@ -6,6 +8,12 @@ type UserPageProps = {
 
 const UserPage:React.FC<UserPageProps> = () => {
     
-    return <div>Userpage</div>
+    return(
+
+        <>
+        <Topbar/>
+        <SearchSection/>
+        </>
+    );
 }
 export default UserPage;
