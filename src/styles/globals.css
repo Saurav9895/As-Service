@@ -31,16 +31,6 @@
   margin-top: 20px;
 }
 
-/* body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-} */
 
 .search-container {
   text-align: left;
@@ -74,29 +64,168 @@
   height: 25px;
   width: 100px;
 }
-.main-head{
-  margin-top: 10px;
-  font-size: 25px;
-  text-align: center;
-  font-weight: bold;
-}
 
-.detail{
-display: flex;
-justify-content: space-between;
-}
 
-.full-page{
-  margin: 20px;
+
+.form{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: solid #bebbbb 0.5px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  
 }
+.dobandage{
+  display: flex;
+  margin-top: 30px;
+  
+}
+.gender{
+  margin-left: -310px;
+}
+#service{
+  margin-left: -5px;
+}
+/* .emailandphone{
+  display: flex;
+} */
 input[type="text"],
-input[type="email"],
+textarea {
+  width: 30%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
+}
 input[type="number"],
+textarea {
+  width: 15%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
+}
+select, #gender, #service {
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
-textarea{
-    width: 100%;
-    padding: 5px;
-    border: 2px solid ;
-    border-radius: 5px;
-    margin: 10px;
+.street{
+  width: 310%;
+}
+input[type="email"],
+textarea {
+  width: 30%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+
+.qualificationandservice{
+  display: flex;
+  margin-top: 30px;
+}
+.qualification1{
+  width: 510%;
+}
+
+.service{
+  margin-left: 160px;
+}
+
+.abt{
+  width: 310%;
+  margin: 10px;
+}
+
+.sbutton{
+  background-color: rgb(12,54,57);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: rgb(12,54,57);
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
+
+}
+
+.padd{
+  padding: 15px;
+}
+
+.card-header {
+  background-color: #fff;
+  color: #3e3e3e;
+  font-size: 2em;
+  padding: 30px;
+  font-weight: 555;
+  line-height: 1.45;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+hr.solid {
+  border-top: 2px solid #514e4e;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+
+}
+hr.solid1 {
+  border-top: 2px solid #514e4e;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+
+}
+
+.details{
+  margin: 30px;
+}
+.address{
+  margin-top: 30px;
+}
+.emailandcontact{
+  margin-top: 30px;
+}
+
+.charge{
+  margin-top: 30px;
+}
+.aboutyou{
+  margin-top: 30px;
+}
+.leftmg{
+  margin-left: 10px;
+  margin-bottom: -23px;
+  font-family: Arial, sans-serif;
+  color: #3c3c3c;
+
+}
+.leftmg1{
+  
+  margin-bottom: -23px;
+  font-family: Arial, sans-serif;
+  color: #3c3c3c;
+
 }

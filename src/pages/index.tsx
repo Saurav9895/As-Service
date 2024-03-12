@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
     <Topbar/>
-    <div className="main-head">Kindly Fill your Details</div>
+    {/* <UserPage/> */}
     <Serviceman/>
     </>
   );
