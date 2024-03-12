@@ -116,7 +116,9 @@ const Forms:React.FC<FormsProps> = () => {
                                 </div>
 
                                 <hr className="solid1"/>
+                                <div className="bc">
                                 <button className="sbutton" type="submit">Submit</button>
+                                </div>
 
                                     
                         </form>
