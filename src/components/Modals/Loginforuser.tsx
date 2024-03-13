@@ -5,6 +5,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from '@/firebase/firebase';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
+import UserPage from '@/pages/Userpage/UserPage';
 
 
 type LoginProps = {

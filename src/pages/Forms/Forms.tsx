@@ -73,7 +73,7 @@ const Forms:React.FC<FormsProps> = () => {
 
                                     <div className="emailandcontact">
                                     <div className="leftmg">Email and Contact Number: </div><br />
-                                            <input type="email" name="" id="" placeholder='abc@gmail.com'/>
+                                            <input type="text" name="" id="" placeholder='abc@gmail.com'/>
                                             <input type="text" name="" id="" placeholder='Your Contact Number'/>
 
                                             
