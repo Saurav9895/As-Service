@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchSection from './SearchSection';
 import Topbar from '@/components/Topbar/Topbar';
 import Servicelist from '@/components/Servicelist/Servicelist';
 

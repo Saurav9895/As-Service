@@ -6,6 +6,7 @@ import { auth } from '@/firebase/firebase';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import Loginforuser from './Loginforuser';
+import Forms from '@/pages/Forms/Forms';
 
 
 type LoginProps = {
@@ -30,11 +31,12 @@ const Login: React.FC<LoginProps> = () => {
 		try {
 			const newUser = await signInWithEmailAndPassword(inputs.serviceemail, inputs.servicepassword);
 			if (!newUser) return;
-			router.push("/");
+			router.push("../Forms/Forms");
 		} catch (error: any) {
 					toast.error(error.message, { position: "top-center", autoClose: 3000, theme: "dark" });
 		}
 	};
+	
 
 	useEffect(() => {
 		if (error) alert(error.message);

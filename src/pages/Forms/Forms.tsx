@@ -1,3 +1,5 @@
+import FormBar from '@/FormBar/FormBar';
+import Topbar from '@/components/Topbar/Topbar';
 import { firestore } from '@/firebase/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import React from 'react';
@@ -20,7 +22,7 @@ const Forms:React.FC<FormsProps> = () => {
     
     return (
         <>
-       
+       <FormBar/>
        <div className="form">
                 <div className="padd">
                 <div className="card-header">

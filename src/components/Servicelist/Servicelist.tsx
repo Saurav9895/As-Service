@@ -37,9 +37,11 @@ const Servicelist: React.FC<ServicelistProps> = () => {
             <p className='text-black'>Plumber</p>
           </td>
           <td>
+            <Link href="/Serviceperson">
             <button className="bg-brand-orange hover:bg-brand-orange-s text-white py-2 px-3 rounded">
               View More Details
             </button>
+            </Link>
           </td>
         </tr>
       </tbody>

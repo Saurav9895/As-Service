@@ -3,24 +3,21 @@ import Link from 'next/link';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Logout from '../Buttons/Logout';
-import { useSetRecoilState } from 'recoil';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { BsList } from 'react-icons/bs';
-import { useRouter } from 'next/router';
+import UserPage from '@/pages/Userpage/UserPage';
+//import { useNavigate } from "react-router-dom";
 
 
-type TopbarProps = {
+type MainpagenavProps = {
+    
 };
 
-const Topbar:React.FC<TopbarProps> = () => {
+const Mainpagenav:React.FC<MainpagenavProps> = () => {
     const [user] = useAuthState(auth);
-   
+    
 
-
-	
 
     return (
-    <nav className='relative flex h-[50px] w-full shrink-0 items-center px-5 bg-dark-green text-dark-gray-7'>
+        <nav className='relative flex h-[50px] w-full shrink-0 items-center px-5 bg-dark-green text-dark-gray-7'>
 			<div className="flex w-full items-center justify-between max-w-[1200px] mx-auto">
         <Link href='/' className='h-[22px] flex-1'>
             <img src='/as service color.png' alt='Logo' height={150} width={150} className='custom-logo'/>
@@ -32,18 +29,20 @@ const Topbar:React.FC<TopbarProps> = () => {
 			
 
         <div className='flex items-center space-x-4 flex-1 justify-end'>
-           <div>
+            <div>
                 <a
-                    href='/'
+                    href='/UserPage'
                     target='_blank'
                     rel='noreferrer'
                     className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
-                    Go To Home Page
+                    Find Service
                 </a>
-            </div> 
+            </div>
+            
                
                 {!user && (
+
 						<Link
 							href='/auth'
 						>
@@ -64,7 +63,7 @@ const Topbar:React.FC<TopbarProps> = () => {
 							</div>
 						</div>
 					)} 
-              		{user && <Logout />}
+              		{user && <Logout/>}
         
 
                                   
@@ -74,4 +73,4 @@ const Topbar:React.FC<TopbarProps> = () => {
 </nav>
     );
 }
-export default Topbar;
+export default Mainpagenav;
