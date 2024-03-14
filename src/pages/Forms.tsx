@@ -3,6 +3,7 @@ import Topbar from '@/components/Topbar/Topbar';
 import { firestore } from '@/firebase/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 type FormsProps = {
     
@@ -46,8 +47,13 @@ const Forms:React.FC<FormsProps> = () => {
                     const newProblem = {
                         ...inputs,
                     }
-                    await setDoc(doc(firestore, "Users Details", inputs.Fname), newProblem);
+                    await setDoc(doc(firestore, "Users", inputs.Fname), newProblem);
                     alert("Saved to database");
+            //         toast.success("Saved to database", {
+            //             position: "top-center",
+            //             autoClose: 3000, // Close the toast automatically after 3 seconds
+            //             theme: "dark",
+            // });
                     // Clear the form after submission
                     setInputs({
                         Fname: '',

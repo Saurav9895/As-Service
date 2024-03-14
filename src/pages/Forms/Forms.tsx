@@ -46,13 +46,10 @@ const Forms:React.FC<FormsProps> = () => {
                     const newProblem = {
                         ...inputs,
                     }
-                    await setDoc(doc(firestore, "Users Details", inputs.Fname), newProblem);
-        // Display a toast message to indicate successful save
-                toast.success("Saved to database", {
-                    position: "top-center",
-                    autoClose: 3000, // Close the toast automatically after 3 seconds
-                    theme: "dark",
-        });
+                    await setDoc(doc(firestore, "Users", inputs.Fname), newProblem);
+                    alert("Saved to database");
+
+      
 
                     // Clear the form after submission
                     setInputs({

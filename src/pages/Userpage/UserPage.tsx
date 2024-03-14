@@ -1,7 +1,6 @@
 import React from 'react';
-import SearchSection from './SearchSection';
 import Topbar from '@/components/Topbar/Topbar';
-import Servicelist from '@/components/Servicelist/Servicelist';
+// import Servicelist from '@/components/Servicelist/Servicelist';
 
 type UserPageProps = {
     
@@ -32,7 +31,7 @@ const UserPage:React.FC<UserPageProps> = () => {
 						<hr />
 							<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5'>
 										<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-											<Servicelist/>
+											{/* <Servicelist/> */}
 										</table>
 							</div>
 						</div>
@@ -46,7 +45,7 @@ const UserPage:React.FC<UserPageProps> = () => {
 							<hr />
 								<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5'>
 											<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-												<Servicelist/>
+												{/* <Servicelist/> */}
 											</table>
 								</div>
 						</div>
@@ -62,7 +61,7 @@ const UserPage:React.FC<UserPageProps> = () => {
 						<hr />
 							<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5 '>
 										<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-											<Servicelist/>
+											{/* <Servicelist/> */}
 										</table>
 							</div>
 						</div>
@@ -76,7 +75,7 @@ const UserPage:React.FC<UserPageProps> = () => {
 							<hr />
 								<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5'>
 											<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-												<Servicelist/>
+												{/* <Servicelist/> */}
 											</table>
 								</div>
 						</div>
