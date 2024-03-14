@@ -29,6 +29,16 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
 			
 
         <div className='flex items-center space-x-4 flex-1 justify-end'>
+        <div>
+                <a
+                    href='/Forms'
+                    target='_blank'
+                    rel='noreferrer'
+                    className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
+                >
+                    Register Yourself
+                </a>
+            </div>
             <div>
                 <a
                     href='/UserPage'

@@ -17,11 +17,11 @@ const AuthPage:React.FC<AuthPageProps> = () => {
 
     const router = useRouter();
 
-    // useEffect(() => {
-	// 	if (user) router.push('/');
-	// 	if (!loading && !user) setPageLoading(false);
-	// }, [user, router, loading]);
-    // if(pageLoading) return null;
+    useEffect(() => {
+		if (user) router.push('/');
+		if (!loading && !user) setPageLoading(false);
+	}, [user, router, loading]);
+    if(pageLoading) return null;
     return (
     <div className='bg-gradient-to-b from-light-green to-dark-green h-screen relative'>
         <div className='max-w-7xl mx-auto'>

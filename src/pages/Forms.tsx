@@ -1,8 +1,8 @@
 import FormBar from '@/FormBar/FormBar';
+import Topbar from '@/components/Topbar/Topbar';
 import { firestore } from '@/firebase/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
 
 type FormsProps = {
     
@@ -47,13 +47,7 @@ const Forms:React.FC<FormsProps> = () => {
                         ...inputs,
                     }
                     await setDoc(doc(firestore, "Users Details", inputs.Fname), newProblem);
-        // Display a toast message to indicate successful save
-                toast.success("Saved to database", {
-                    position: "top-center",
-                    autoClose: 3000, // Close the toast automatically after 3 seconds
-                    theme: "dark",
-        });
-
+                    alert("Saved to database");
                     // Clear the form after submission
                     setInputs({
                         Fname: '',
@@ -76,9 +70,9 @@ const Forms:React.FC<FormsProps> = () => {
                         About: '',
                     });
                     window.location.href = '/';
-                } catch (error:any) {
+                } catch (error) {
                     console.error("Error saving to Firestore:", error);
-					toast.error(error.message, { position: "top-center", autoClose: 3000, theme: "dark" });
+                    alert("Failed to save to database. Check console for details.");
                 }
             };
     return (
@@ -156,7 +150,7 @@ const Forms:React.FC<FormsProps> = () => {
 
                                         <div className="service">
                                         <div className="leftmg1">Service: </div><br />
-                                                <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Service You Provide' value={inputs.service} className='servicetext'/>
+                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Service You Provide' value={inputs.service} className='servicetext'/>
 
                                                    
                                         </div>

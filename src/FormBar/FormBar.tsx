@@ -24,7 +24,7 @@ const FormBar:React.FC<FormBarProps> = () => {
         
 
     <div className='flex items-center space-x-4 flex-1 justify-end'>
-       {/* <div>
+       <div>
             <a
                 href='/'
                 target='_blank'
@@ -33,7 +33,7 @@ const FormBar:React.FC<FormBarProps> = () => {
             >
                 Go To Home Page
             </a>
-        </div>  */}
+        </div> 
            
             {!user && (
                     <Link

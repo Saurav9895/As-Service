@@ -1,15 +1,17 @@
 import React from 'react';
 
+
 type HomapageProps = {
     
 };
 
 const Homapage:React.FC<HomapageProps> = () => {
+
     
     return(
         <div className="mainbody">
       <div id="image-section">
-        <img className="header-image" src="https://github.com/malunaridev/Landing-Pages-Are-Fun/blob/master/1-business-agency-concept/assets/image.png?raw=true" alt="a business woman and man standing back to back to each other and smiling" />
+        <img className="header-image" src="image.png" alt="a business woman and man standing back to back to each other and smiling" />
       </div>
       <div id="content">
         <div id="content-text">
