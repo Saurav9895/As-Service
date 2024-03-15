@@ -152,8 +152,8 @@
       margin-right: auto; /* Reset margin */
       width: 90%; /* Set width to full for mobile */
       margin-bottom: 20px;
-      padding-top: -3px;
-      padding-top: -3px;
+      padding-top: -2px;
+      padding-top: -2px;
       
       height: calc(55vh - 4rem); /* Adjust margin for mobile */
   }
