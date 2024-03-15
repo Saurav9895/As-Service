@@ -12,7 +12,6 @@ type Service  = {
     Mname: string;
     Lname: string;
     service: string;
-    City: string;
     // Add other properties as needed
 }
 type ServicepersonProps = {
@@ -32,8 +31,8 @@ const Serviceperson:React.FC<ServicepersonProps> = () => {
 
                 if (docSnap.exists()) {
                     const data = docSnap.data();
-                    const { Fname, Mname, Lname, service, City } = data as Service;
-                    setServiceDetails({ Fname, Mname, Lname, service, City });
+                    const { Fname, Mname, Lname, service} = data as Service;
+                    setServiceDetails({ Fname, Mname, Lname, service });
                 } else {
                     console.error('User not found');
                 }
