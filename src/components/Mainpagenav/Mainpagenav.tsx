@@ -35,7 +35,7 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
                     href='/Forms'
                     target='_blank'
                     rel='noreferrer'
-                    className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
+                    className='regbutformain'
                 >
                     Register Yourself as a Service Man
                 </a>
@@ -45,7 +45,7 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
                     href='/Servicelist'
                     target='_blank'
                     rel='noreferrer'
-                    className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
+                    className='regbutformain'
                 >
                     Find Service
                 </a>

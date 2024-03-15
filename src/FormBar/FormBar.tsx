@@ -30,7 +30,7 @@ const FormBar:React.FC<FormBarProps> = () => {
                 href='/'
                 target='_blank'
                 rel='noreferrer'
-                className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
+                className='regbutformain'
             >
                 Go To Home Page
             </a>
@@ -47,7 +47,7 @@ const FormBar:React.FC<FormBarProps> = () => {
                 )}
                 {user && (
                     <div className='cursor-pointer group relative'>
-                        <Image src='/avatar.png' alt='Avatar' className=' h-8 w-8 rounded-full' />
+                        <Image src='/avatar.png' alt='Avatar' className=' h-8 w-8 rounded-full' height={50} width={50} />
                         <div
                             className='absolute top-10 left-2/4 -translate-x-2/4  mx-auto bg-dark-layer-1 text-brand-orange p-2 rounded shadow-lg 
                             z-40 group-hover:scale-100 scale-0 
