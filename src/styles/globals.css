@@ -14,6 +14,7 @@
   height: calc(80vh - 5rem);
 }
 
+
 .first-register {
   border: white;
   border-radius: 10px;
@@ -25,6 +26,25 @@
 }
 
 .second-register {
+  border: white;
+  border-radius: 10px;
+  border-style: solid;
+  margin-left: 30px;
+  width: 40%;
+  padding-top: 10px;
+  margin-bottom: 50px;
+}
+.first-register1 {
+  border: white;
+  border-radius: 10px;
+  border-style: solid;
+  margin-right: 30px;
+  width: 40%;
+  padding-top: 10px;
+  margin-bottom: 50px;
+}
+
+.second-register1 {
   border: white;
   border-radius: 10px;
   border-style: solid;
@@ -102,7 +122,12 @@
   background-color: #fff; /* Equivalent to hover:bg-white in Tailwind CSS */
   border-color: #f59e0b; /* Equivalent to hover:border-brand-orange in Tailwind CSS */
 }
-                
+   
+.account {
+  font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+  font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+  color: #d1d5db;
+}
 @media screen and (max-width: 640px) {
   .hello {
       height: auto;
@@ -110,6 +135,7 @@
       align-items: stretch; /* Stretch items to fill container */
       justify-content: flex-start; /* Align items to the start of the container */
   }
+  
 
   .first-register,
   .second-register {
@@ -119,6 +145,15 @@
       margin-bottom: 20px;
       
       height: calc(50vh - 5rem); /* Adjust margin for mobile */
+  }
+  .first-register1,
+  .second-register1 {
+      margin-left: auto; /* Reset margin */
+      margin-right: auto; /* Reset margin */
+      width: 90%; /* Set width to full for mobile */
+      margin-bottom: 20px;
+      
+      height: calc(60vh - 4rem); /* Adjust margin for mobile */
   }
   .helloform {
     padding-bottom: 0rem; /* pb-4 in Tailwind CSS */
@@ -177,6 +212,12 @@
 }
 .mainsectionauth {
   height: 100vh;
+}
+.account {
+  font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+  font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+  color: #d1d5db;
+  margin-top: -2px;
 }
 }
 

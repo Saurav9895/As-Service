@@ -59,9 +59,9 @@ const Signup:React.FC<SignupProps> = () => {
 	
     return (
         
-        <div className='hello '>
-            <div className='first-register'>
-        <form className='space-y-6 px-6 pb-4' onSubmit={handleRegister}>
+        <div className='hello'>
+            <div className='first-register1'>
+        <form className='helloform' onSubmit={handleRegister}>
 			<h3 className='text-xl font-medium text-white text-center'>Register As Service Person</h3>
 			<div>
 				<label htmlFor='email' className='text-sm font-medium block mb-2 text-gray-300'>
@@ -73,10 +73,7 @@ const Signup:React.FC<SignupProps> = () => {
 					type='email'
 					name='serviceemail'
 					id='serviceemail'
-					className='
-        border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
-        bg-gray-600 border-gray-500 placeholder-gray-400 text-white
-    '
+					className='hellotext'
 					placeholder='name@company.com'
 				/>
 			</div>
@@ -90,10 +87,7 @@ const Signup:React.FC<SignupProps> = () => {
 					type='displayName'
 					name='servicedisplayName'
 					id='servicedisplayName'
-					className='
-        border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
-        bg-gray-600 border-gray-500 placeholder-gray-400 text-white
-    '
+					className='hellotext'
 					placeholder='John Doe'
 				/>
 			</div>
@@ -107,24 +101,19 @@ const Signup:React.FC<SignupProps> = () => {
 					type='password'
 					name='servicepassword'
 					id='servicepassword'
-					className='
-        border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
-        bg-gray-600 border-gray-500 placeholder-gray-400 text-white
-    '
+					className='hellotext'
 					placeholder='*******'
 				/>
 			</div>
 
 			<button
 				type='submit'
-				className='w-full text-white focus:ring-blue-300 font-medium rounded-lg
-            text-sm px-5 py-2.5 text-center bg-brand-orange hover:bg-brand-orange-s
-        '
+				className='submitbutton'
 			>
 				{loading ? "Registering..." : "Register"}
 			</button>
 
-			<div className='text-sm font-medium text-gray-300'>
+			<div className='account'>
 				Already have an account?{" "}
 				<a href='#' className='text-blue-700 hover:underline' onClick={handleClick}>
 					Log In
