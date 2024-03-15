@@ -2,24 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
+.hello {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(80vh - 5rem);
+}
 
-.first-register{
+.first-register {
   border: white;
   border-radius: 10px;
   border-style: solid;
   margin-right: 30px;
   width: 40%;
   padding-top: 10px;
+  margin-bottom: 50px;
 }
-.second-register{
+
+.second-register {
   border: white;
   border-radius: 10px;
   border-style: solid;
   margin-left: 30px;
   width: 40%;
   padding-top: 10px;
+  margin-bottom: 50px;
+}
+.helloform {
+  padding-bottom: 1rem; /* pb-4 in Tailwind CSS */
+  padding-left: 1.5rem; /* px-6 in Tailwind CSS */
+  padding-right: 1.5rem; /* px-6 in Tailwind CSS */
+}
 
+.helloform > * + * {
+  margin-top: 1.5rem; /* space-y-6 in Tailwind CSS */
+}
+.hellotext{
+  border-width: 2px;
+  outline: none;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border-color: #7c7a7a;
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #4b5563;
+  color: #a5a5a5;
+  color: #fff;
+}
 
+.submitbutton {
+  width: 100%; /* Equivalent to w-full in Tailwind CSS */
+  color: #fff; /* Equivalent to text-white in Tailwind CSS */
+  font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+  border-radius: 0.5rem; /* Equivalent to rounded-lg in Tailwind CSS */
+  font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+  padding: 0.625rem 1.25rem; /* Equivalent to px-5 py-2.5 in Tailwind CSS */
+  text-align: center; /* Equivalent to text-center in Tailwind CSS */
+  background-color: #f59e0b; /* Equivalent to bg-brand-orange in Tailwind CSS */
+}
+
+.submitbutton:focus {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Equivalent to focus:ring-blue-300 in Tailwind CSS */
+}
+
+.submitbutton:hover {
+  background-color: #fbbf24; /* Equivalent to hover:bg-brand-orange-s in Tailwind CSS */
+}
+.reg{
+  font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+  font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+  color: #d1d5db; /* Equivalent to text-gray-300 in Tailwind CSS */
+}
+@media screen and (max-width: 640px) {
+  .hello {
+      height: auto;
+      flex-direction: column; /* Stack items vertically */
+      align-items: stretch; /* Stretch items to fill container */
+      justify-content: flex-start; /* Align items to the start of the container */
+  }
+
+  .first-register,
+  .second-register {
+      margin-left: auto; /* Reset margin */
+      margin-right: auto; /* Reset margin */
+      width: 90%; /* Set width to full for mobile */
+      margin-bottom: 20px;
+      
+      height: calc(55vh - 5rem); /* Adjust margin for mobile */
+  }
+  .helloform {
+    padding-bottom: 0rem; /* pb-4 in Tailwind CSS */
+    padding-left: 1rem; /* px-6 in Tailwind CSS */
+    padding-right: 1rem; /* px-6 in Tailwind CSS */
+  }
+  
+  .helloform > * + * {
+    margin-top: 0.5rem; /* space-y-6 in Tailwind CSS */
+  }
+  .hellotext{
+    border-width: 2px;
+    outline: none;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    border-color: #7c7a7a;
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: -5px;
+    background-color: #4b5563;
+    color: #a5a5a5;
+    color: #fff;
+  }
+  .submitbutton {
+    width: 100%;
+    margin-top: 1rem; /* Equivalent to w-full in Tailwind CSS */
+    color: #fff; /* Equivalent to text-white in Tailwind CSS */
+    font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg in Tailwind CSS */
+    font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+    padding: 0.425rem 1.25rem; /* Equivalent to px-5 py-2.5 in Tailwind CSS */
+    text-align: center; /* Equivalent to text-center in Tailwind CSS */
+    background-color: #f59e0b; /* Equivalent to bg-brand-orange in Tailwind CSS */
+  }
+  
+  .submitbutton:focus {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Equivalent to focus:ring-blue-300 in Tailwind CSS */
+  }
+  
+  .submitbutton:hover {
+    background-color: #fbbf24; /* Equivalent to hover:bg-brand-orange-s in Tailwind CSS */
+  }
+  .reg{
+    font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+    font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+    color: #d1d5db; /* Equivalent to text-gray-300 in Tailwind CSS */
+    margin-top: -5px;
+  }
 }
 .top-logo{
  
@@ -506,9 +625,7 @@ margin-left: 190px;
 
 
 @media (max-width: 600px) {
-  * {
-    font-size: 60%;
-  }
+ 
   
   .mainbody {
     flex-direction: column-reverse;
@@ -547,6 +664,8 @@ margin-left: 190px;
   justify-content: space-between;
   align-items: center;
   gap: 0rem;
+
+  
   
 } 
   

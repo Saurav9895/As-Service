@@ -59,7 +59,7 @@ const Signup:React.FC<SignupProps> = () => {
 	
     return (
         
-        <div className='flex items-center justify-center h-[calc(100vh-5rem)] select-none'>
+        <div className='hello '>
             <div className='first-register'>
         <form className='space-y-6 px-6 pb-4' onSubmit={handleRegister}>
 			<h3 className='text-xl font-medium text-white text-center'>Register As Service Person</h3>
