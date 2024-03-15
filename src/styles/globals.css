@@ -74,6 +74,30 @@
   font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
   color: #d1d5db; /* Equivalent to text-gray-300 in Tailwind CSS */
 }
+.top-logo{
+ 
+  max-width: 200px;
+  height: 60px;
+
+}
+.loginbottonfornav {
+  background-color: #f59e0b; /* Equivalent to bg-brand-orange in Tailwind CSS */
+  color: #fff; /* Equivalent to text-white in Tailwind CSS */
+  padding: 0.5rem 1rem; /* Equivalent to px-2 py-1 in Tailwind CSS */
+  font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+  font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+  border-radius: 0.375rem; /* Equivalent to rounded-md in Tailwind CSS */
+  border: 2px solid transparent; /* Equivalent to border-2 border-transparent in Tailwind CSS */
+  transition-duration: 0.3s; /* Equivalent to transition duration-300 in Tailwind CSS */
+  transition-timing-function: ease-in-out; /* Equivalent to ease-in-out in Tailwind CSS */
+}
+
+.loginbottonfornav:hover {
+  color: #f59e0b; /* Equivalent to hover:text-brand-orange in Tailwind CSS */
+  background-color: #fff; /* Equivalent to hover:bg-white in Tailwind CSS */
+  border-color: #f59e0b; /* Equivalent to hover:border-brand-orange in Tailwind CSS */
+}
+                
 @media screen and (max-width: 640px) {
   .hello {
       height: auto;
@@ -139,13 +163,21 @@
     color: #d1d5db; /* Equivalent to text-gray-300 in Tailwind CSS */
     margin-top: -5px;
   }
-}
-.top-logo{
+  .top-logo{
  
-    max-width: 200px;
+    max-width: 150px;
     height: 60px;
+    margin-top: 40px;
 
 }
+.loginbottonfornav {
+  font-size: 0.975rem;
+  margin-right: 20px; 
+  margin-top: 40px;
+
+}
+}
+
 .border-box{
   margin-top: 20px;
 }

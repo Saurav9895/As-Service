@@ -12,7 +12,7 @@ const Homapage:React.FC<HomapageProps> = () => {
     return(
         <div className="mainbody">
       <div id="image-section">
-        <Image className="header-image" src="image.png" alt="a business woman and man standing back to back to each other and smiling" />
+        <Image className="header-image" src="/image.png" alt="a business woman and man standing back to back to each other and smiling" height={500} width={500} />
       </div>
       <div id="content">
         <div id="content-text">
