@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { collection, doc, getDoc } from 'firebase/firestore';
+import {doc, getDoc } from 'firebase/firestore';
 import { firestore } from '@/firebase/firebase'; // Import your Firebase configuration
 import Topbar from '@/components/Topbar/Topbar';
 // import { MoreOutlined } from '@ant-design/icons';
