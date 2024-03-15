@@ -1,87 +1,69 @@
-import React from 'react';
+// UserPage component
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { firestore } from '@/firebase/firebase';
 import Topbar from '@/components/Topbar/Topbar';
-// import Servicelist from '@/components/Servicelist/Servicelist';
+import Link from 'next/link';
 
-type UserPageProps = {
-    
+type Service = {
+  id: string; // Add an ID field to uniquely identify each user
+  Fname: string;
+  Mname?: string;
+  Lname: string;
+  service: string;
+  City: string;
+  // Add other properties as needed
+}
+
+const UserPage: React.FC = () => {
+  const [serviceList, setServiceList] = useState<Service[]>([]);
+  const router = useRouter();
+  const { service } = router.query;
+
+  useEffect(() => {
+    const fetchServiceList = async () => {
+      try {
+        const q = query(collection(firestore, 'Users'), where('service', '==', service));
+        const querySnapshot = await getDocs(q);
+        const servicesData: Service[] = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const id = doc.id; // Get the ID of the document
+          const { Fname, Mname, Lname, service, City } = data;
+          servicesData.push({ id, Fname, Mname, Lname, service, City });
+        });
+        setServiceList(servicesData);
+      } catch (error) {
+        console.error('Error fetching services:', error);
+      }
+    };
+
+    if (service) {
+      fetchServiceList();
+    }
+  }, [service]);
+
+  return (
+    <>
+      <Topbar/>
+            {/* Display service cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-10">
+                {serviceList.map((service, index) => (
+                    <div key={index} className="p-4 bg-white shadow-2xl rounded-md">
+                        <h2 className="text-2xl font-bold mb-2">{service.Fname + (service.Mname ? ' ' + service.Mname : '') + ' ' + service.Lname}</h2>
+                        <p className="mb-2" style={{ color: 'gray' }}>{service.service}</p>
+                        <p className="mb-2" style={{ color: 'gray' }}>{service.City}</p>
+							<Link href={`/Serviceperson?id=${service.id}`}>
+                            <button className="bg-brand-orange hover:bg-brand-orange-s text-white py-2 px-3 rounded">
+                                View More Details
+                            </button>
+                        </Link>
+                    </div>
+                ))}
+            </div>
+    </>
+  );
 };
 
-const UserPage:React.FC<UserPageProps> = () => {
-    
-    return(
-
-        <>
-        
-        
-        <main className='bg-white min-h-screen'>
-				<Topbar />
-                {/* <SearchSection/> */}
-				<h1 className='text-2xl text-center text-black dark:text-white font-medium
-							uppercase mt-10 mb-5'>
-							Find Your Service Person
-						</h1>
-				<div className="mainsection">
-
-						<div className="firstsection">
-
-						<h1 className='text-2xl text-center text-black dark:text-white font-medium
-							uppercase mt-10 mb-5'>
-							Plumber
-						</h1>
-						<hr />
-							<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5'>
-										<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-											{/* <Servicelist/> */}
-										</table>
-							</div>
-						</div>
-
-						<div className="secondsection">
-
-							<h1 className='text-2xl text-center text-black dark:text-white font-medium
-								uppercase mt-10 mb-5'>
-								Electrician
-							</h1>
-							<hr />
-								<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5'>
-											<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-												{/* <Servicelist/> */}
-											</table>
-								</div>
-						</div>
-				</div>
-				<div className="mainsection">
-
-						<div className="firstsection">
-
-						<h1 className='text-2xl text-center text-black dark:text-white font-medium
-							uppercase mt-10 mb-5'>
-							Painter
-						</h1>
-						<hr />
-							<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5 '>
-										<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-											{/* <Servicelist/> */}
-										</table>
-							</div>
-						</div>
-
-						<div className="secondsection">
-
-							<h1 className='text-2xl text-center text-black dark:text-white font-medium
-								uppercase mt-10 mb-5'>
-								Mechanic
-							</h1>
-							<hr />
-								<div className='relative overflow-x-auto mx-auto px-6 pb-10 mt-5'>
-											<table className='text-center text-gray-500 dark:text-gray-400  w-full mx-auto'>
-												{/* <Servicelist/> */}
-											</table>
-								</div>
-						</div>
-				</div>
-		</main>
-        </>
-    );
-}
 export default UserPage;

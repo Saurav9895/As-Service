@@ -1,4 +1,5 @@
 import FormBar from '@/FormBar/FormBar';
+import Topbar from '@/components/Topbar/Topbar';
 import { firestore } from '@/firebase/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
@@ -48,9 +49,11 @@ const Forms:React.FC<FormsProps> = () => {
                     }
                     await setDoc(doc(firestore, "Users", inputs.Fname), newProblem);
                     alert("Saved to database");
-
-      
-
+            //         toast.success("Saved to database", {
+            //             position: "top-center",
+            //             autoClose: 3000, // Close the toast automatically after 3 seconds
+            //             theme: "dark",
+            // });
                     // Clear the form after submission
                     setInputs({
                         Fname: '',
@@ -73,9 +76,9 @@ const Forms:React.FC<FormsProps> = () => {
                         About: '',
                     });
                     window.location.href = '/';
-                } catch (error:any) {
+                } catch (error) {
                     console.error("Error saving to Firestore:", error);
-					toast.error(error.message, { position: "top-center", autoClose: 3000, theme: "dark" });
+                    alert("Failed to save to database. Check console for details.");
                 }
             };
     return (
@@ -90,9 +93,9 @@ const Forms:React.FC<FormsProps> = () => {
                         <form onSubmit={handleSubmit}>
                             <div className="name">
                                 <div className="leftmg">Name:</div> <br />    
-                                <input onChange={handleInputChange} type="text" name="Fname" id="" placeholder='First Name' value={inputs.Fname}/>
+                                <input onChange={handleInputChange} type="text" name="Fname" id="" placeholder='First Name' value={inputs.Fname} required/>
                                 <input onChange={handleInputChange} type="text" name="Mname" id="" placeholder='Middle Name' value={inputs.Mname}/>
-                                <input onChange={handleInputChange} type="text" name="Lname" id="" placeholder='Middle Name' value={inputs.Lname}/>
+                                <input onChange={handleInputChange} type="text" name="Lname" id="" placeholder='Middle Name' value={inputs.Lname} required/>
                             </div>
 
                             <div className="dobandage">
@@ -105,13 +108,14 @@ const Forms:React.FC<FormsProps> = () => {
 
                                 </div>
 
-                                <div className="gender">
-                                <div className="leftmg1">Gender: </div><br />
+                            
+                            </div>
+                            <div className="gender">
+                                <div className="leftmg">Gender: </div><br />
                                         <input onChange={handleInputChange} type="text" name="gender" id="" placeholder='Your Gender' value={inputs.gender}/>
 
                                            
                                 </div>
-                            </div>
                             <div className="emailandcontact">
                                     <div className="leftmg">Email and Contact Number: </div><br />
                                             <input onChange={handleInputChange} type="text" name="Email" id="" placeholder='abc@gmail.com' value={inputs.Email}/>
@@ -151,12 +155,13 @@ const Forms:React.FC<FormsProps> = () => {
 
                                         </div>
 
-                                        <div className="service">
-                                        <div className="leftmg1">Service: </div><br />
-                                                <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Service You Provide' value={inputs.service} className='servicetext'/>
+                                       
+                                    </div>
 
-                                                   
-                                        </div>
+
+                                    <div className="service">
+                                        <div className="leftmg">Service: </div><br />
+                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Service You Provide' value={inputs.service} className='servicetext'/>           
                                         </div>
 
                                 <div className="charge">
