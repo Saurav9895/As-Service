@@ -113,7 +113,7 @@
       width: 90%; /* Set width to full for mobile */
       margin-bottom: 20px;
       
-      height: calc(55vh - 5rem); /* Adjust margin for mobile */
+      height: calc(50vh - 5rem); /* Adjust margin for mobile */
   }
   .helloform {
     padding-bottom: 0rem; /* pb-4 in Tailwind CSS */
