@@ -139,15 +139,8 @@
     color: #fff;
   }
   .submitbutton {
-    width: 100%;
-    margin-top: 1rem; /* Equivalent to w-full in Tailwind CSS */
-    color: #fff; /* Equivalent to text-white in Tailwind CSS */
-    font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
-    border-radius: 0.5rem; /* Equivalent to rounded-lg in Tailwind CSS */
-    font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+    margin-top: 1.4rem; /* Equivalent to w-full in Tailwind CSS */
     padding: 0.425rem 1.25rem; /* Equivalent to px-5 py-2.5 in Tailwind CSS */
-    text-align: center; /* Equivalent to text-center in Tailwind CSS */
-    background-color: #f59e0b; /* Equivalent to bg-brand-orange in Tailwind CSS */
   }
   
   .submitbutton:focus {
@@ -160,8 +153,9 @@
   .reg{
     font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
     font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
-    color: #d1d5db; /* Equivalent to text-gray-300 in Tailwind CSS */
-    margin-top: -5px;
+    color: #d1d5db;
+    margin-top: -5px; /* Equivalent to text-gray-300 in Tailwind CSS */
+    
   }
   .top-logo{
  
