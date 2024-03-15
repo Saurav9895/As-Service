@@ -24,7 +24,7 @@ const AuthPage:React.FC<AuthPageProps> = () => {
 	}, [user, router, loading]);
     if(pageLoading) return null;
     return (
-    <div className='bg-gradient-to-b from-light-green to-dark-green h-screen relative'>
+    <div className='mainsectionauth'>
         <div className='max-w-7xl mx-auto'>
 
 			<Navbar/>
