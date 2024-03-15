@@ -39,7 +39,7 @@ const Signup:React.FC<SignupProps> = () => {
   
 		if (!newUser) return;
 		
-		  router.push('../Forms/Forms"');
+		  router.push('/Forms"');
 		
 		} catch (error: any) {
 			toast.error(error.message, { position: "top-center" });

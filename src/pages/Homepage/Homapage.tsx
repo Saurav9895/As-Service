@@ -15,19 +15,19 @@ const Homapage:React.FC<HomapageProps> = () => {
       </div>
       <div id="content">
         <div id="content-text">
-          <h1 className="h1">Business <br /> agency</h1>
-          <h2 className="h2">Lorem ipsum dolor sit amet, consectetur <br /> 
-            adipisicing elit pariatur quibusdam <br /> 
-            voluptatem pariatur dolore.</h2>
+          <h1 className="h1">Service <br /> Finder</h1>
+          <h2 className="h2">Search for your service person in easy way <br /> 
+            Category for each service so that you can find it easier<br /> 
+            Easy to Contact</h2> 
             <div id="footer">
           <div id="contacts">
             <div id="phone">
               More Information call us <br />
-              <span>+91-878787-12345</span>
+              <span>+91-9155917535</span>
             </div>
             <div id="address">
-              <h2>Av. Lorem ipsum dolor, 2045 <br />
-              Dolor sit Amet - Address</h2>
+              <h2>asservice@gmail.com <br />
+              Nepal - Address</h2>
             </div>
           </div>  
         </div>

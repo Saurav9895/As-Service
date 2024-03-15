@@ -448,7 +448,8 @@ margin-left: 190px;
 
 
 #address h2{
-  font-size: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 #content-text {
@@ -468,8 +469,8 @@ margin-left: 190px;
 
 .h2 {
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-size: 2rem;
+  font-weight:600;
+  font-size: 1.5rem;
   line-height: 2.5rem;
   width: 40rem;
 }
@@ -489,8 +490,8 @@ margin-left: 190px;
 #phone,
 #adress {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 1.8rem;
+  font-weight: 600;
+  font-size: 1.5rem;
   line-height: 2.1rem;
   color: #303c4e;
 }

@@ -31,6 +31,8 @@ module.exports = {
 				// "light-green": "rgb(30,134,141)",
 				"light-green": "rgb(21,94,99)",
 				"dark-green": "rgb(12,54,57)",
+				"light-blue": "rgb(48,181,187)",
+				"light-idx": "rgb(7,134,133)",
 
 			},
 		},

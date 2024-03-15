@@ -36,7 +36,7 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
                     rel='noreferrer'
                     className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
-                    Register Yourself
+                    Register Yourself as a Service Man
                 </a>
             </div>
             <div>
