@@ -18,7 +18,7 @@ const Navbar:React.FC<NavbarProps> = () => {
         
         <div className='flex items-center justify-between sm:px-12 px-2 md:px-24'>
         <Link href='/' className='flex items-center justify-center h-20'>
-        <img src='/as service color.png' alt='as service'className='top-logo'/>
+        <Image src='/as service color.png' alt='as service'className='top-logo'/>
         </Link>
         <div className='flex items-center'>
         <button

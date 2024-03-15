@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 
@@ -11,7 +12,7 @@ const Homapage:React.FC<HomapageProps> = () => {
     return(
         <div className="mainbody">
       <div id="image-section">
-        <img className="header-image" src="image.png" alt="a business woman and man standing back to back to each other and smiling" />
+        <Image className="header-image" src="image.png" alt="a business woman and man standing back to back to each other and smiling" />
       </div>
       <div id="content">
         <div id="content-text">

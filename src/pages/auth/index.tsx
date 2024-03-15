@@ -3,6 +3,7 @@ import AuthModal from '@/components/Modals/AuthModal';
 import Login from '@/components/Modals/Login';
 import Navbar from '@/components/Navbar/Navbar';
 import { auth } from '@/firebase/firebase';
+import Image from 'next/image';
 import { Router, useRouter } from 'next/router';
 
 import React, { useEffect, useState } from 'react';
@@ -28,7 +29,7 @@ const AuthPage:React.FC<AuthPageProps> = () => {
 
 			<Navbar/>
             <div className='flex items-center justify-center h-[calc(100vh-5rem)] pointer-events-none select-none'>
-					<img src='/fimage.png' alt='Hero img' width={1000} height={700} />
+					<Image src='/fimage.png' alt='Hero img' width={1000} height={700} />
 				</div>
 			{/* <Login/> */}
 			

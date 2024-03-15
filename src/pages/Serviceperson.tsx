@@ -5,6 +5,7 @@ import { collection, doc, getDoc } from 'firebase/firestore';
 import { firestore } from '@/firebase/firebase'; // Import your Firebase configuration
 import Topbar from '@/components/Topbar/Topbar';
 import { MoreOutlined } from '@ant-design/icons';
+import Image from 'next/image';
 
 
 type Service  = {
@@ -60,7 +61,7 @@ const Serviceperson:React.FC<ServicepersonProps> = () => {
                 <div className="flex justify-between flex-row pt-[44px] items-center -mt-20 pl-[32px]">
                     <div className="flex flex-row items-center gap-[31px]">
                         <div className="relative bg-white w-[158px] h-[158px] border border-gray-200 rounded-full ">
-                        <img src="avatar.png" alt="..." className="avatar-img rounded-circle " />
+                        <Image src="avatar.png" alt="..." className="avatar-img rounded-circle " />
                         </div>
                         <div className='flex flex-col'>
                             <span className="truncate font-medium text-[22px] text-[#363A43]">{serviceDetails.Fname + (serviceDetails.Mname ? ' ' + serviceDetails.Mname : '') + ' ' + serviceDetails.Lname}</span>

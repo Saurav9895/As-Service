@@ -1,5 +1,6 @@
 import Logout from '@/components/Buttons/Logout';
 import { auth } from '@/firebase/firebase';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -15,7 +16,7 @@ const FormBar:React.FC<FormBarProps> = () => {
         <nav className='relative flex h-[50px] w-full shrink-0 items-center px-5 bg-dark-green text-dark-gray-7'>
         <div className="flex w-full items-center justify-between max-w-[1200px] mx-auto">
     <Link href='/' className='h-[22px] flex-1'>
-        <img src='/as service color.png' alt='Logo' height={150} width={150} className='custom-logo'/>
+        <Image src='/as service color.png' alt='Logo' height={150} width={150} className='custom-logo'/>
     </Link>
 
     
@@ -46,7 +47,7 @@ const FormBar:React.FC<FormBarProps> = () => {
                 )}
                 {user && (
                     <div className='cursor-pointer group relative'>
-                        <img src='/avatar.png' alt='Avatar' className=' h-8 w-8 rounded-full' />
+                        <Image src='/avatar.png' alt='Avatar' className=' h-8 w-8 rounded-full' />
                         <div
                             className='absolute top-10 left-2/4 -translate-x-2/4  mx-auto bg-dark-layer-1 text-brand-orange p-2 rounded shadow-lg 
                             z-40 group-hover:scale-100 scale-0 
