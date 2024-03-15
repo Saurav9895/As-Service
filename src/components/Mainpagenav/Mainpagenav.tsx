@@ -18,6 +18,7 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
 
 
     return (
+        <>
         <nav className='relative flex h-[50px] w-full shrink-0 items-center px-5 bg-dark-green text-dark-gray-7'>
 			<div className="flex w-full items-center justify-between max-w-[1200px] mx-auto">
         <Link href='/' className='h-[22px] flex-1'>
@@ -75,13 +76,12 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
 						</div>
 					)} 
               		{user && <Logout/>}
-        
 
-                                  
-        
         </div>
     </div>
 </nav>
+
+</>
     );
 }
 export default Mainpagenav;
