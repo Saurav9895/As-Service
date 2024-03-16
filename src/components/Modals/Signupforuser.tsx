@@ -36,7 +36,7 @@ const Signupforuser:React.FC<SignupforuserProps> = () => {
   
 		if (!newUser) return;
 		
-		  router.push('../Userpage/UserPage');
+		  router.push("/")
 		
 		} catch (error: any) {
 			toast.error(error.message, { position: "top-center" });
