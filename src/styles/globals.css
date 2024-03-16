@@ -128,7 +128,31 @@
   font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
   color: #d1d5db;
 }
+.full-page {
+  position: relative;
+  height: 80vh;
+}
 
+.sorry {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.sorry img {
+  width: 400px; /* Adjust size as needed */
+  height: auto;
+}
+
+.h3{
+  font-size: 30px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: rgb(12,54,57);
+  margin-top: 20px;
+}
 
 @media screen and (max-width: 640px) {
   .hello {
@@ -327,17 +351,7 @@ select, #gender, #service {
 .street{
   width: 310%;
 }
-input[type="emaiil"],
-textarea {
-  width: 30%;
-  padding: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 10px;
-}
+
 
 
 .qualificationandservice{
@@ -351,7 +365,6 @@ textarea {
 
 .abt{
   width: 310%;
-  margin: 10px;
 }
 
 
@@ -754,7 +767,6 @@ margin-left: 190px;
 
 
 
-
 .header-image {
   height: auto;
   width: 20rem;
@@ -787,6 +799,40 @@ margin-left: 190px;
  
 }
 
+input[type="text"],
+textarea {
+  width: 90%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
+}
+input[type="number"],
+textarea {
+  width: 90%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
+}
+.street{
+  width: 100%;
+}
+.abt{
+  width: 100%;
+}
+.sbutton{
+  
+  font-weight: 500;
+  width: 50%;
+
+}
 }
 
 

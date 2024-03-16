@@ -1,8 +1,9 @@
 import FormBar from '@/FormBar/FormBar';
 import Topbar from '@/components/Topbar/Topbar';
-import { firestore } from '@/firebase/firebase';
+import { auth, firestore } from '@/firebase/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 
 type FormsProps = {
@@ -11,6 +12,8 @@ type FormsProps = {
 
 
 const Forms:React.FC<FormsProps> = () => {
+    const [user] = useAuthState(auth);
+
     const [inputs,setInputs] = useState({
     	Fname: '',
 		Mname: '',
@@ -85,7 +88,10 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
     return (
         <>
        <FormBar/>
+      
+       {user && (
        <div className="form">
+       
                 <div className="padd">
                 <div className="card-header">
                 Kindly Enter Your Details
@@ -96,7 +102,7 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                                 <div className="leftmg">Name: </div> <br />    
                                 <input onChange={handleInputChange} type="text" name="Fname" id="" placeholder='First Name' value={inputs.Fname} required />
                                 <input onChange={handleInputChange} type="text" name="Mname" id="" placeholder='Middle Name' value={inputs.Mname}/>
-                                <input onChange={handleInputChange} type="text" name="Lname" id="" placeholder='Middle Name' value={inputs.Lname} required />
+                                <input onChange={handleInputChange} type="text" name="Lname" id="" placeholder='Last Name' value={inputs.Lname} required />
                             </div>
 
                             <div className="dobandage">
@@ -187,7 +193,21 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                                     
                         </form>
                         </div>
+
+                   
+                        
        </div>
+        )}
+         {!user && (
+
+                <div className="full-page">
+                <div className="sorry">
+                    <img src="/oops.png" alt="" />        
+                <h3 className='h3'>Please Login First</h3>        
+                </div>  
+                </div>
+        )}
+      
        </>
          
     );
