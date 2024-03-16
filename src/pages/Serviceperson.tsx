@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import {doc, getDoc } from 'firebase/firestore';
-import { firestore } from '@/firebase/firebase'; // Import your Firebase configuration
+import { auth, firestore } from '@/firebase/firebase'; // Import your Firebase configuration
 import Topbar from '@/components/Topbar/Topbar';
 // import { MoreOutlined } from '@ant-design/icons';
 import Image from 'next/image';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 type Service  = {
@@ -19,6 +20,8 @@ type ServicepersonProps = {
 };
 
 const Serviceperson:React.FC<ServicepersonProps> = () => {
+    const [user] = useAuthState(auth);
+
     const [serviceDetails, setServiceDetails] = useState<Service | null>(null);
     const router = useRouter();
     const { id } = router.query;
@@ -52,7 +55,7 @@ const Serviceperson:React.FC<ServicepersonProps> = () => {
     return(
         <>
         <Topbar/>
-        
+        {user && (
         <main className="h-full w-full bg-white py-8 sm:px-32 lg:px-40 px-4">
             <div className="bg-white pb-[53px]">
                 <div className="w-full h-[193px] bg-gradient-to-r from-light-green via-light-idx to-light-green" />
@@ -112,6 +115,16 @@ const Serviceperson:React.FC<ServicepersonProps> = () => {
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
         </main>
+        )}
+        {!user && (
+
+               <div className="full-page">
+               <div className="sorry">
+                   <img src="/oops.png" alt="" />        
+               <h3 className='h3'>Please Login First</h3>        
+               </div>  
+               </div>
+       )}
         </>
         );
 }

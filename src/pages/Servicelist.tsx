@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from '@/firebase/firebase';
+import { auth, firestore } from '@/firebase/firebase';
 import Topbar from '@/components/Topbar/Topbar';
 import { useRouter } from 'next/router';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 type Service = {
   id: string; // Add an ID field to uniquely identify each service
@@ -12,6 +13,8 @@ type Service = {
 }
 
 const Servicelist: React.FC = () => {
+  const [user] = useAuthState(auth);
+
   const [uniqueServices, setUniqueServices] = useState<Service[]>([]);
   const router = useRouter();
 
@@ -46,20 +49,31 @@ const Servicelist: React.FC = () => {
   return (
     <>
       <Topbar/>
-      {/* Display unique service cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-10">
-        {uniqueServices.map((service, index) => (
-          <div key={index} className="p-4 bg-white shadow-2xl rounded-md">
-            <h2 className="text-2xl font-bold mb-2">{service.service}</h2>
-            <button 
-              onClick={() => handleServiceDetails(service.service)} 
-              className="bg-brand-orange hover:bg-brand-orange-s text-white py-2 px-3 rounded"
-            >
-              View More Details
-            </button>
+      {user && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-10">
+          {uniqueServices.map((service, index) => (
+            <div key={service.id} className="p-4 bg-white shadow-2xl rounded-md">
+              <h2 className="text-2xl font-bold mb-2">{service.service}</h2>
+              <button 
+                onClick={() => handleServiceDetails(service.service)} 
+                className="bg-brand-orange hover:bg-brand-orange-s text-white py-2 px-3 rounded"
+              >
+                View More Details
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+      {!user && (
+        <>
+          <div className="full-page">
+            <div className="sorry">
+              <img src="/oops.png" alt="" />        
+              <h3 className='h3'>Please Login First</h3>        
+            </div>  
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </>
   );
 };
