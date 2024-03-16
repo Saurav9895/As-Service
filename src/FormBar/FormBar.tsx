@@ -34,7 +34,7 @@ const FormBar:React.FC<FormBarProps> = () => {
                 <div className='ml-4 flex items-center space-x-4'>
                 <a
                     href='/'
-                    target='_blank'
+                    target=''
                     rel='noreferrer'
                     className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
@@ -108,7 +108,7 @@ const FormBar:React.FC<FormBarProps> = () => {
             <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
             <a
                     href='/'
-                    target='_blank'
+                    target=''
                     rel='noreferrer'
                     className='block bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
