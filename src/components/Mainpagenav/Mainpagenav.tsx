@@ -178,22 +178,22 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
             </div>
             <div className='hidden md:block'>
                 <div className='ml-4 flex items-center space-x-4'>
-                <a
+                <Link
                     href='/Forms'
                     target=''
                     rel='noreferrer'
                     className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
                     Register Yourself as a Service Man
-                </a>
-                <a
+                </Link>
+                <Link
                     href='/Servicelist'
                     target=''
                     rel='noreferrer'
                     className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
                     Find Service
-                </a>   
+                </Link>   
                 {!user && (
 
                         <Link
@@ -260,22 +260,22 @@ const Mainpagenav:React.FC<MainpagenavProps> = () => {
     {isClick && (
         <div className="md:hidden">
             <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-            <a
+            <Link
                     href='/Forms'
                     target=''
                     rel='noreferrer'
                     className='block bg-dark-fill-3 py-2 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
                     Register Yourself as a Service Man
-                </a>
-                <a
+                </Link>
+                <Link
                     href='/Servicelist'
                     target=''
                     rel='noreferrer'
                     className='block bg-dark-fill-3 py-2 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
                 >
                     Find Service
-                </a>  
+                </Link>  
 
                 <div className='flex items-center space-x-4 flex-1 justify-start'> 
                 {!user && (
