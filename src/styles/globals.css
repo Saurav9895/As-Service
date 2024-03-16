@@ -695,7 +695,19 @@ margin-left: 190px;
   letter-spacing: 0.2rem;
 }
 
-
+.detailsname {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 31px;
+}
+.servicedetails {
+  font-size: 19px;
+  color: #363a43;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 @media screen and (max-width: 640px) {
  
@@ -761,7 +773,20 @@ margin-left: 190px;
   
   
 } 
+.detailsname {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
   
+.servicedetails {
+  font-size: 19px;
+  color: #363a43;
+  text-align: center;
+  margin-bottom: -20px;
+ 
+}
+
 }
 
 
