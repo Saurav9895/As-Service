@@ -5,6 +5,7 @@ import { useSetRecoilState } from 'recoil';
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import AuthPage from '@/pages/auth';
 
 
 type SignupProps = {
@@ -47,7 +48,6 @@ const Signup:React.FC<SignupProps> = () => {
 	};
 
 	
-
   
 	useEffect(() => {
 		if (error) toast.error(error.message, { position: "top-center", autoClose: 3000, theme: "dark" });	}, [error]);

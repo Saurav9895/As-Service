@@ -1,12 +1,19 @@
+import { authModalState } from "@/atoms/authModalAtoms";
 import { auth } from "@/firebase/firebase";
 import React, { useState, useEffect } from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import { useSetRecoilState } from "recoil";
 type ResetPasswordProps = {};
 
 const ResetPassword: React.FC<ResetPasswordProps> = () => {
+	const setAuthModalState = useSetRecoilState(authModalState);
+	const handleClick = () => {
+		setAuthModalState((prev) => ({ ...prev, type: "login" }));
+	};
 	const [email, setEmail] = useState("");
 	const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
+	
 	const handleReset = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const success = await sendPasswordResetEmail(email);
@@ -48,6 +55,12 @@ const ResetPassword: React.FC<ResetPasswordProps> = () => {
 			>
 				Reset Password
 			</button>
+			<div className='text-sm font-medium text-gray-400'>
+				Back to{" "}
+				<a href='#' className='text-blue-700 hover:underline' onClick={handleClick}>
+					Log In
+				</a>
+			</div>
 		</form>
 	);
       

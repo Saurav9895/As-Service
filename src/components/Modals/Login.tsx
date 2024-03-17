@@ -27,16 +27,16 @@ const Login: React.FC<LoginProps> = () => {
 		e.preventDefault();
 		if (!inputs.serviceemail || !inputs.servicepassword) return alert("Please fill all fields");
 		try {
-			toast.loading("Loggin in...", { position: "top-center", toastId: "loadingToast" });
-
+			
 			const newUser = await signInWithEmailAndPassword(inputs.serviceemail, inputs.servicepassword);
 			if (!newUser) return;
 			router.push("/");
-			toast.dismiss("loadingToast");
+			
 
 			
 		} catch (error: any) {
 					toast.error(error.message, { position: "top-center", autoClose: 3000, theme: "dark" });
+
 		}
 	};
 	
