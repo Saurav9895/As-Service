@@ -519,12 +519,32 @@ margin-left: 190px;
   align-items: center;
   gap: 31px;
 }
+.detailsfornameanddesignation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.cen{
+  margin-top: 0px;
+}
 .servicedetails {
   font-size: 19px;
   color: #363a43;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.makeacall {
+  background-color: rgb(255 161 22); /* Brand Orange color */
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.makeacall:hover {
+  background-color: rgb(193, 122, 15); /* Brand Orange-S color (slightly darker shade) on hover */
 }
 
 @media screen and (max-width: 640px) {
@@ -533,6 +553,10 @@ margin-left: 190px;
   .mainbody {
     flex-direction: column-reverse;
     width: auto;
+  }
+  .makeacall{
+    margin-bottom: -10px;
+    margin-top: 30px;
   }
 
   #content {
@@ -607,10 +631,26 @@ margin-top: 40px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
   
+}
+
+.cen{
+margin-left: -15px;
+}
+.detailsfornameanddesignation {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  margin-top: 20px;
+}
+.makeacall {
+  
+ padding: 12px;
+ margin-bottom: -5px;
+}
 .servicedetails {
-  font-size: 19px;
+  font-size: 22px;
+  font-weight: 500;
   color: #363a43;
   text-align: center;
   margin-bottom: -20px;

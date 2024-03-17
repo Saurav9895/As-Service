@@ -180,7 +180,7 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                                 <div className="aboutyou">
                                 <div className="leftmg">About You:</div> <br />    
                                     <div className="abt">
-                                    <input onChange={handleInputChange} type="text" name="About" id="" placeholder='About You' value={inputs.About} required/>
+                                        <input onChange={handleInputChange} type="text" name="About" id="" placeholder='About You' value={inputs.About} required/>
     
                                     </div>                   
                                 </div>
