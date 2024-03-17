@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .top-logo{
  
   max-width: 200px;
@@ -54,25 +53,6 @@
   margin-top: 20px;
 }
 
-@media screen and (max-width: 640px) {  
- 
-  .top-logo{
- 
-    max-width: 150px;
-    height: 60px;
-    margin-top: 40px;
-    margin-left: 20px;
-
-}
-.loginbottonfornav {
-  font-size: 0.975rem;
-  margin-right: 20px; 
-  margin-top: 40px;
-
-}
-
-
-}
 
 .border-box{
   margin-top: 20px;
@@ -588,7 +568,20 @@ margin-left: 190px;
 }
 
 
+.top-logo{
+ 
+  max-width: 150px;
+  height: 60px;
+  margin-top: 40px;
+  margin-left: 20px;
 
+}
+.loginbottonfornav {
+font-size: 0.975rem;
+margin-right: 20px; 
+margin-top: 40px;
+
+}
 
 
 
