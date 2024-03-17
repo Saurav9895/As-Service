@@ -5,7 +5,6 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from '@/firebase/firebase';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-import Loginforuser from './Loginforuser';
 import Forms from '@/pages/Forms/Forms';
 
 
@@ -31,7 +30,7 @@ const Login: React.FC<LoginProps> = () => {
 		try {
 			const newUser = await signInWithEmailAndPassword(inputs.serviceemail, inputs.servicepassword);
 			if (!newUser) return;
-			router.push("../Forms/Forms");
+			router.push("/");
 		} catch (error: any) {
 					toast.error(error.message, { position: "top-center", autoClose: 3000, theme: "dark" });
 		}
@@ -43,10 +42,9 @@ const Login: React.FC<LoginProps> = () => {
 	},[error])
     
     return(
-        <div className='hello'>
-		<div className='first-register'>
-		<form className='helloform' onSubmit={handleLogin}>
-			<h3 className='text-xl font-medium text-white text-center'>Sign in As Service Person</h3>
+        
+		<form className='space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8' onSubmit={handleLogin}>
+			<h3 className='text-xl font-medium text-white text-center'>Sign in to As Service</h3>
 			<div>
 				<label htmlFor='email' className='text-sm font-medium block mb-2 text-gray-300'>
 					Your Email
@@ -56,7 +54,7 @@ const Login: React.FC<LoginProps> = () => {
 					type='email'
 					name='serviceemail'
 					id='serviceemail'
-					className='hellotext'
+					className='border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white'
 					placeholder='name@company.com'
 				/>
 			</div>
@@ -69,14 +67,16 @@ const Login: React.FC<LoginProps> = () => {
 					type='password'
 					name='servicepassword'
 					id='servicepassword'
-					className='hellotext'
+					className='border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white'
 					placeholder='*******'
 				/>
 			</div>
 
 			<button
 				type='submit'
-				className='submitbutton'
+				className='w-full text-white focus:ring-blue-300 font-medium rounded-lg
+				text-sm px-5 py-2.5 text-center bg-brand-orange hover:bg-brand-orange-s
+			'
 			>
 				{loading ? "Loading..." : "Log In"}
 			</button>
@@ -85,16 +85,14 @@ const Login: React.FC<LoginProps> = () => {
 					Forgot Password?
 				</a>
 			</button>
-			<div className='reg'>
+			<div className='text-sm font-medium text-gray-400'>
 				Not Registered?{" "}
 				<a href='#' className='text-blue-700 hover:underline' onClick={() => handleClick("register")}>
 					Create account
 				</a>
 			</div>
 		</form>
-		</div>
-		<Loginforuser/>
-		</div>
+		
     );
 }
 export default Login;

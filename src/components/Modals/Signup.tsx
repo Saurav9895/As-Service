@@ -5,8 +5,6 @@ import { useSetRecoilState } from 'recoil';
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-import Signupforuser from './Signupforuser';
-import Login from './Login';
 
 
 type SignupProps = {
@@ -39,7 +37,7 @@ const Signup:React.FC<SignupProps> = () => {
   
 		if (!newUser) return;
 		
-		  router.push('/Forms"');
+		  router.push('/');
 		
 		} catch (error: any) {
 			toast.error(error.message, { position: "top-center" });
@@ -59,10 +57,8 @@ const Signup:React.FC<SignupProps> = () => {
 	
     return (
         
-        <div className='hello'>
-            <div className='first-register1'>
-        <form className='helloform' onSubmit={handleRegister}>
-			<h3 className='text-xl font-medium text-white text-center'>Register As Service Person</h3>
+        <form className='space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8' onSubmit={handleRegister}>
+			<h3 className='text-xl font-medium text-white text-center'>Register to As Service</h3>
 			<div>
 				<label htmlFor='email' className='text-sm font-medium block mb-2 text-gray-300'>
 					Email
@@ -73,7 +69,7 @@ const Signup:React.FC<SignupProps> = () => {
 					type='email'
 					name='serviceemail'
 					id='serviceemail'
-					className='hellotext'
+					className='border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white'
 					placeholder='name@company.com'
 				/>
 			</div>
@@ -87,7 +83,7 @@ const Signup:React.FC<SignupProps> = () => {
 					type='displayName'
 					name='servicedisplayName'
 					id='servicedisplayName'
-					className='hellotext'
+					className='border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white'
 					placeholder='John Doe'
 				/>
 			</div>
@@ -101,30 +97,30 @@ const Signup:React.FC<SignupProps> = () => {
 					type='password'
 					name='servicepassword'
 					id='servicepassword'
-					className='hellotext'
+					className='border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white'
 					placeholder='*******'
 				/>
 			</div>
 
 			<button
 				type='submit'
-				className='submitbutton'
+				className='w-full text-white focus:ring-blue-300 font-medium rounded-lg
+				text-sm px-5 py-2.5 text-center bg-brand-orange hover:bg-brand-orange-s
+			'
 			>
 				{loading ? "Registering..." : "Register"}
 			</button>
 
-			<div className='account'>
+			<div className='text-sm font-medium text-gray-400'>
 				Already have an account?{" "}
 				<a href='#' className='text-blue-700 hover:underline' onClick={handleClick}>
 					Log In
 				</a>
 			</div>
 		</form>
-        </div>
-        <Signupforuser/>
+        
 	
         
-        </div>
     );
 }
 export default Signup;

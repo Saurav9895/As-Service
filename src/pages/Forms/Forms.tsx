@@ -1,8 +1,9 @@
 import FormBar from '@/FormBar/FormBar';
 import Topbar from '@/components/Topbar/Topbar';
-import { firestore } from '@/firebase/firebase';
+import { auth, firestore } from '@/firebase/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 
 type FormsProps = {
@@ -11,6 +12,8 @@ type FormsProps = {
 
 
 const Forms:React.FC<FormsProps> = () => {
+    const [user] = useAuthState(auth);
+
     const [inputs,setInputs] = useState({
     	Fname: '',
 		Mname: '',
@@ -47,7 +50,8 @@ const Forms:React.FC<FormsProps> = () => {
                     const newProblem = {
                         ...inputs,
                     }
-                    await setDoc(doc(firestore, "Users", inputs.Fname), newProblem);
+                    const docId = `${inputs.Fname}-${inputs.Lname}-${Date.now()}`;
+await               setDoc(doc(firestore, "Users", docId), newProblem);
                     alert("Saved to database");
             //         toast.success("Saved to database", {
             //             position: "top-center",
@@ -84,7 +88,10 @@ const Forms:React.FC<FormsProps> = () => {
     return (
         <>
        <FormBar/>
+      
+       {user && (
        <div className="form">
+       
                 <div className="padd">
                 <div className="card-header">
                 Kindly Enter Your Details
@@ -92,19 +99,19 @@ const Forms:React.FC<FormsProps> = () => {
                 <hr className="solid"/>
                         <form onSubmit={handleSubmit}>
                             <div className="name">
-                                <div className="leftmg">Name:</div> <br />    
-                                <input onChange={handleInputChange} type="text" name="Fname" id="" placeholder='First Name' value={inputs.Fname} required/>
+                                <div className="leftmg">Name: </div> <br />    
+                                <input onChange={handleInputChange} type="text" name="Fname" id="" placeholder='First Name' value={inputs.Fname} required />
                                 <input onChange={handleInputChange} type="text" name="Mname" id="" placeholder='Middle Name' value={inputs.Mname}/>
-                                <input onChange={handleInputChange} type="text" name="Lname" id="" placeholder='Middle Name' value={inputs.Lname} required/>
+                                <input onChange={handleInputChange} type="text" name="Lname" id="" placeholder='Last Name' value={inputs.Lname} required />
                             </div>
 
                             <div className="dobandage">
 
                                 <div className="dob">
                                 <div className="leftmg">Date of Birth:</div> <br />
-                                        <input onChange={handleInputChange} type="number" name="Date" id="" placeholder='Date' value={inputs.Date}/>
-                                        <input onChange={handleInputChange} type="number" name="Month" id="" placeholder='Month' value={inputs.Month}/>
-                                        <input onChange={handleInputChange} type="number" name="Year" id="" placeholder='Year' value={inputs.Year}/>
+                                        <input onChange={handleInputChange} type="number" name="Date" id="" placeholder='Date' value={inputs.Date} required/>
+                                        <input onChange={handleInputChange} type="number" name="Month" id="" placeholder='Month' value={inputs.Month} required/>
+                                        <input onChange={handleInputChange} type="number" name="Year" id="" placeholder='Year' value={inputs.Year} required/>
 
                                 </div>
 
@@ -112,14 +119,14 @@ const Forms:React.FC<FormsProps> = () => {
                             </div>
                             <div className="gender">
                                 <div className="leftmg">Gender: </div><br />
-                                        <input onChange={handleInputChange} type="text" name="gender" id="" placeholder='Your Gender' value={inputs.gender}/>
+                                        <input onChange={handleInputChange} type="text" name="gender" id="" placeholder='Your Gender' value={inputs.gender} required/>
 
                                            
                                 </div>
                             <div className="emailandcontact">
                                     <div className="leftmg">Email and Contact Number: </div><br />
-                                            <input onChange={handleInputChange} type="text" name="Email" id="" placeholder='abc@gmail.com' value={inputs.Email}/>
-                                            <input onChange={handleInputChange} type="text" name="Number" id="" placeholder='Your Contact Number' value={inputs.Number}/>
+                                            <input onChange={handleInputChange} type="text" name="Email" id="" placeholder='abc@gmail.com' value={inputs.Email} required/>
+                                            <input onChange={handleInputChange} type="text" name="Number" id="" placeholder='Your Contact Number' value={inputs.Number} required/>
 
                                             
 
@@ -128,14 +135,14 @@ const Forms:React.FC<FormsProps> = () => {
                             <div className="address">
                             <div className="leftmg">Address:</div> <br />    
                                 <div className="street">
-                                <input onChange={handleInputChange} type="text" name="Streetaddress" id="" placeholder='Street Address' value={inputs.Streetaddress}/>
+                                <input onChange={handleInputChange} type="text" name="Streetaddress" id="" placeholder='Street Address' value={inputs.Streetaddress} required/>
                                 </div>
                                 <div className="street">
-                                <input onChange={handleInputChange} type="text" name="Streetline2" id="" placeholder='Street Line 2' value={inputs.Streetline2}/>
+                                <input onChange={handleInputChange} type="text" name="Streetline2" id="" placeholder='Street Line 2' value={inputs.Streetline2} />
                                 </div>
-                                <input onChange={handleInputChange} type="text" name="City" id="" placeholder='City' value={inputs.City}/>
-                                <input onChange={handleInputChange} type="text" name="State" id="" placeholder='State/Provience' value={inputs.State}/>
-                                <input onChange={handleInputChange} type="number" name="Postal" id="" placeholder='Postal/Zip Code' value={inputs.Postal}/>
+                                <input onChange={handleInputChange} type="text" name="City" id="" placeholder='City' value={inputs.City} required/>
+                                <input onChange={handleInputChange} type="text" name="State" id="" placeholder='State/Provience' value={inputs.State} required/>
+                                <input onChange={handleInputChange} type="number" name="Postal" id="" placeholder='Postal/Zip Code' value={inputs.Postal} required/>
                             </div>
 
 
@@ -150,7 +157,7 @@ const Forms:React.FC<FormsProps> = () => {
                                         <div className="qualification">
                                         <div className="leftmg">Qualification:</div> <br />
                                                 <div className="qualification1">
-                                                <input onChange={handleInputChange} type="text" name="Qualification" id="" placeholder='Qualification' value={inputs.Qualification}/>
+                                                <input onChange={handleInputChange} type="text" name="Qualification" id="" placeholder='Qualification' value={inputs.Qualification} required/>
                                                 </div>
 
                                         </div>
@@ -161,19 +168,19 @@ const Forms:React.FC<FormsProps> = () => {
 
                                     <div className="service">
                                         <div className="leftmg">Service: </div><br />
-                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Service You Provide' value={inputs.service} className='servicetext'/>           
+                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Service You Provide' value={inputs.service} className='servicetext' required/>           
                                         </div>
 
                                 <div className="charge">
                                 <div className="leftmg">Charge:</div> <br />    
-                                    <input onChange={handleInputChange} type="number" name="Charge" id="" placeholder='Charge Your take' value={inputs.Charge}/>
+                                    <input onChange={handleInputChange} type="number" name="Charge" id="" placeholder='Charge Your take' value={inputs.Charge} required/>
                                 
                                 </div>
 
                                 <div className="aboutyou">
                                 <div className="leftmg">About You:</div> <br />    
                                     <div className="abt">
-                                    <input onChange={handleInputChange} type="text" name="About" id="" placeholder='About You' value={inputs.About}/>
+                                    <input onChange={handleInputChange} type="text" name="About" id="" placeholder='About You' value={inputs.About} required/>
     
                                     </div>                   
                                 </div>
@@ -186,7 +193,21 @@ const Forms:React.FC<FormsProps> = () => {
                                     
                         </form>
                         </div>
+
+                   
+                        
        </div>
+        )}
+         {!user && (
+
+                <div className="full-page">
+                <div className="sorry">
+                    <img src="/oops.png" alt="" />        
+                <h3 className='h3'>Please Login First</h3>        
+                </div>  
+                </div>
+        )}
+      
        </>
          
     );
