@@ -99,16 +99,16 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                 <hr className="solid"/>
                         <form onSubmit={handleSubmit}>
                             <div className="name">
-                                <div className="leftmg">Name: </div> <br />    
+                            <div className="leftmg">Name: <span className="red">*</span></div> <br />
                                 <input onChange={handleInputChange} type="text" name="Fname" id="" placeholder='First Name' value={inputs.Fname} required />
-                                <input onChange={handleInputChange} type="text" name="Mname" id="" placeholder='Middle Name' value={inputs.Mname}/>
+                                <input onChange={handleInputChange} type="text" name="Mname" id="" placeholder='Middle Name (Optional)' value={inputs.Mname}/>
                                 <input onChange={handleInputChange} type="text" name="Lname" id="" placeholder='Last Name' value={inputs.Lname} required />
                             </div>
 
                             <div className="dobandage">
 
                                 <div className="dob">
-                                <div className="leftmg">Date of Birth:</div> <br />
+                                <div className="leftmg">Date of Birth: <span className="red">*</span></div> <br />
                                         <input onChange={handleInputChange} type="number" name="Date" id="" placeholder='Date' value={inputs.Date} required/>
                                         <input onChange={handleInputChange} type="number" name="Month" id="" placeholder='Month' value={inputs.Month} required/>
                                         <input onChange={handleInputChange} type="number" name="Year" id="" placeholder='Year' value={inputs.Year} required/>
@@ -118,13 +118,13 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                             
                             </div>
                             <div className="gender">
-                                <div className="leftmg">Gender: </div><br />
+                                <div className="leftmg">Gender: <span className="red">*</span></div><br />
                                         <input onChange={handleInputChange} type="text" name="gender" id="" placeholder='Your Gender' value={inputs.gender} required/>
 
                                            
                                 </div>
                             <div className="emailandcontact">
-                                    <div className="leftmg">Email and Contact Number: </div><br />
+                                    <div className="leftmg">Email and Contact Number: <span className="red">*</span></div><br />
                                             <input onChange={handleInputChange} type="text" name="Email" id="" placeholder='abc@gmail.com' value={inputs.Email} required/>
                                             <input onChange={handleInputChange} type="text" name="Number" id="" placeholder='Your Contact Number' value={inputs.Number} required/>
 
@@ -133,12 +133,12 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                                     </div>
 
                             <div className="address">
-                            <div className="leftmg">Address:</div> <br />    
+                            <div className="leftmg">Address: <span className="red">*</span></div> <br />    
                                 <div className="street">
                                 <input onChange={handleInputChange} type="text" name="Streetaddress" id="" placeholder='Street Address' value={inputs.Streetaddress} required/>
                                 </div>
                                 <div className="street">
-                                <input onChange={handleInputChange} type="text" name="Streetline2" id="" placeholder='Street Line 2' value={inputs.Streetline2} />
+                                <input onChange={handleInputChange} type="text" name="Streetline2" id="" placeholder='Street Line 2 (Optional)' value={inputs.Streetline2} />
                                 </div>
                                 <input onChange={handleInputChange} type="text" name="City" id="" placeholder='City' value={inputs.City} required/>
                                 <input onChange={handleInputChange} type="text" name="State" id="" placeholder='State/Provience' value={inputs.State} required/>
@@ -155,7 +155,7 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                                     <div className="qualificationandservice">
 
                                         <div className="qualification">
-                                        <div className="leftmg">Qualification:</div> <br />
+                                        <div className="leftmg">Qualification: <span className="red">*</span></div> <br />
                                                 <div className="qualification1">
                                                 <input onChange={handleInputChange} type="text" name="Qualification" id="" placeholder='Qualification' value={inputs.Qualification} required/>
                                                 </div>
@@ -167,18 +167,18 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
 
 
                                     <div className="service">
-                                        <div className="leftmg">Service: </div><br />
-                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Service You Provide' value={inputs.service} className='servicetext' required/>           
+                                        <div className="leftmg">Service: <span className="red">*</span></div><br />
+                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Eg: Plumber, Electrician, Doctor' value={inputs.service} className='servicetext' required/>           
                                         </div>
 
                                 <div className="charge">
-                                <div className="leftmg">Charge:</div> <br />    
+                                <div className="leftmg">Charge: <span className="red">*</span></div> <br />    
                                     <input onChange={handleInputChange} type="number" name="Charge" id="" placeholder='Charge Your take' value={inputs.Charge} required/>
                                 
                                 </div>
 
                                 <div className="aboutyou">
-                                <div className="leftmg">About You:</div> <br />    
+                                <div className="leftmg">About You: <span className="red">*</span></div> <br />    
                                     <div className="abt">
                                         <input onChange={handleInputChange} type="text" name="About" id="" placeholder='About You' value={inputs.About} required/>
     
