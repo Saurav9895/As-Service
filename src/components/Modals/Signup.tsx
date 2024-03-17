@@ -50,8 +50,7 @@ const Signup:React.FC<SignupProps> = () => {
 
   
 	useEffect(() => {
-	  if (error) alert(error.message);
-	}, [error]);
+		if (error) toast.error(error.message, { position: "top-center", autoClose: 3000, theme: "dark" });	}, [error]);
 
 
 	

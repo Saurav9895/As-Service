@@ -51,13 +51,12 @@ const Forms:React.FC<FormsProps> = () => {
                         ...inputs,
                     }
                     const docId = `${inputs.Fname}-${inputs.Lname}-${Date.now()}`;
-await               setDoc(doc(firestore, "Users", docId), newProblem);
-                    alert("Saved to database");
-            //         toast.success("Saved to database", {
-            //             position: "top-center",
-            //             autoClose: 3000, // Close the toast automatically after 3 seconds
-            //             theme: "dark",
-            // });
+                    await setDoc(doc(firestore, "Users", docId), newProblem);
+                    toast.success("Saved to database", {
+                        position: "top-center",
+                        autoClose: 4000, // Close the toast automatically after 3 seconds
+                        theme: "dark",
+            });
                     // Clear the form after submission
                     setInputs({
                         Fname: '',
@@ -80,9 +79,9 @@ await               setDoc(doc(firestore, "Users", docId), newProblem);
                         About: '',
                     });
                     window.location.href = '/';
-                } catch (error) {
+                } catch (error : any) {
                     console.error("Error saving to Firestore:", error);
-                    alert("Failed to save to database. Check console for details.");
+                    toast("Failed to save to database. Check console for details.");
                 }
             };
     return (
