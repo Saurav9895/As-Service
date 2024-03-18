@@ -192,7 +192,7 @@ const Forms:React.FC<FormsProps> = () => {
                                 <hr className="solid1"/>
                                 
                                 <input type="checkbox" id="acceptTerms" name="acceptTerms" className="checkmark" required/>
-                                 <span> Once Registered, the details cannot be changed </span> <span className="red">*</span>
+                                 <span className='leftmg'> Once Registered, the details cannot be changed </span> <span className="red">*</span>
 
                                 <hr className="solid1"/>
                                 <div className="bc">

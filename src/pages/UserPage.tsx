@@ -67,17 +67,17 @@ const UserPage: React.FC = () => {
                 </div>
                 <b><p className="ml-1.5 mt-2" style={{ color: 'gray' }}>Ratings</p></b>
                 <div className="rating">
-                  <input type="radio" id="star5" name="rating" value="5"/>
-                  <label htmlFor="star5">&#9733;</label>
-                  <input type="radio" id="star4" name="rating" value="4" checked/>
-                  <label htmlFor="star4">&#9733;</label>
-                  <input type="radio" id="star3" name="rating" value="3"/>
-                  <label htmlFor="star3">&#9733;</label>
-                  <input type="radio" id="star2" name="rating" value="2"/>
-                  <label htmlFor="star2">&#9733;</label>
-                  <input type="radio" id="star1" name="rating" value="1"/>
-                  <label htmlFor="star1">&#9733;</label>
-                </div>
+                      <input type="radio" id={`star5_${index}`} name={`rating_${index}`} value="5"/>
+                      <label htmlFor={`star5_${index}`}>&#9733;</label>
+                      <input type="radio" id={`star4_${index}`} name={`rating_${index}`} value="4" checked/>
+                      <label htmlFor={`star4_${index}`}>&#9733;</label>
+                      <input type="radio" id={`star3_${index}`} name={`rating_${index}`} value="3"/>
+                      <label htmlFor={`star3_${index}`}>&#9733;</label>
+                      <input type="radio" id={`star2_${index}`} name={`rating_${index}`} value="2"/>
+                      <label htmlFor={`star2_${index}`}>&#9733;</label>
+                      <input type="radio" id={`star1_${index}`} name={`rating_${index}`} value="1"/>
+                      <label htmlFor={`star1_${index}`}>&#9733;</label>
+                  </div>
                 <b><p className="ml-1.5" style={{ color: 'gray' }}>Service</p></b>
                 <p className="mb-2 ml-1.5" style={{ color: 'black' }}>{service.About}</p>
 

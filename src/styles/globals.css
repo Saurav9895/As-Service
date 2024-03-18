@@ -7,7 +7,6 @@
   margin-left: 10px;
 }
 .rating {
-  unicode-bidi: bidi-override;
   direction: rtl;
   text-align: left;
 }
@@ -20,6 +19,7 @@
   font-size: 24px;
   color: #ccc;
   margin-top: -5px;
+  pointer-events: none;
 }
 .rating > input:checked ~ label {
   color: rgb(255, 213, 0);
@@ -55,7 +55,7 @@
 
 .full-page {
   position: relative;
-  height: 80vh;
+  height: 85vh;
 }
 
 .sorry {
