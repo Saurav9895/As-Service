@@ -6,6 +6,7 @@ import Mainpagenav from "@/components/Mainpagenav/Mainpagenav";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/firebase";
 import AuthPage from "./auth";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   const [user] = useAuthState(auth);
@@ -16,6 +17,7 @@ export default function Home() {
         <>
           <Mainpagenav />
           <Homapage />
+          <Footer/>
         </>
       ) : (
         <AuthPage />

@@ -1,4 +1,5 @@
 import FormBar from '@/FormBar/FormBar';
+import Footer from '@/components/Footer/Footer';
 import Topbar from '@/components/Topbar/Topbar';
 import { auth, firestore } from '@/firebase/firebase';
 import { doc, setDoc } from 'firebase/firestore';
@@ -166,18 +167,18 @@ const Forms:React.FC<FormsProps> = () => {
 
 
                                     <div className="service">
-                                        <div className="leftmg">Service: <span className="red">*</span></div><br />
-                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Eg: Plumber, Electrician, Doctor' value={inputs.service} className='servicetext' required/>           
+                                        <div className="leftmg">Who You are?: <span className="red">*</span></div><br />
+                                        <input onChange={handleInputChange} type="text" name="service" id="" placeholder='Eg: Plumber, Electrician, Engineer' value={inputs.service} className='servicetext' required/>           
                                         </div>
 
                                 <div className="charge">
-                                <div className="leftmg">Charge: <span className="red">*</span></div> <br />    
+                                <div className="leftmg">Charge You Take for Service: <span className="red">*</span></div> <br />    
                                     <input onChange={handleInputChange} type="number" name="Charge" id="" placeholder='Charge Your take' value={inputs.Charge} required/>
                                 
                                 </div>
 
                                 <div className="aboutyou">
-                                <div className="leftmg">About You: <span className="red">*</span></div> <br />    
+                                <div className="leftmg">Please Tell me about you and what kind of service you provide : <span className="red">*</span></div> <br />    
                                     <div className="abt">
                                         <input onChange={handleInputChange} type="text" name="About" id="" placeholder='About You' value={inputs.About} required/>
     
@@ -206,6 +207,7 @@ const Forms:React.FC<FormsProps> = () => {
                 </div>  
                 </div>
         )}
+        <Footer/>
       
        </>
          

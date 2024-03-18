@@ -6,6 +6,7 @@ import Topbar from '@/components/Topbar/Topbar';
 // import { MoreOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Footer from '@/components/Footer/Footer';
 
 
 type Service = {
@@ -104,6 +105,10 @@ const Serviceperson: React.FC = () => {
                 <span className="font-medium text-[13px] text-[#414141]">Service Charge:  {serviceDetails.Charge}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
+            <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
+                <span className="font-medium text-[13px] text-[#414141]">Who He/She is:  {serviceDetails.service}</span>
+                {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
+            </li>
             <li className="w-full items-center border-x border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
                 <span className="font-medium text-[13px] text-[#414141]">Gender:  {serviceDetails.gender}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
@@ -129,6 +134,10 @@ const Serviceperson: React.FC = () => {
                 <span className="font-medium text-[13px] text-[#414141]">Postal/Zip Code: {serviceDetails.Postal}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
+            <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
+                <span className="font-medium text-[13px] text-[#414141]">Servie They Provide: {serviceDetails.About}</span>
+                {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
+            </li>
         </main>
         )}
         {!user && (
@@ -140,6 +149,7 @@ const Serviceperson: React.FC = () => {
                </div>  
                </div>
        )}
+       <Footer/>
         </>
         );
 }

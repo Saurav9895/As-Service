@@ -5,6 +5,7 @@ import { auth, firestore } from '@/firebase/firebase';
 import Topbar from '@/components/Topbar/Topbar';
 import { useRouter } from 'next/router';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Footer from '@/components/Footer/Footer';
 
 type Service = {
   id: string; // Add an ID field to uniquely identify each service
@@ -74,6 +75,7 @@ const Servicelist: React.FC = () => {
           </div>
         </>
       )}
+      <Footer/>
     </>
   );
 };

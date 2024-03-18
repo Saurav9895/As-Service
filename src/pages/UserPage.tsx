@@ -6,6 +6,7 @@ import { auth, firestore } from '@/firebase/firebase';
 import Topbar from '@/components/Topbar/Topbar';
 import Link from 'next/link';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Footer from '@/components/Footer/Footer';
 
 type Service = {
   id: string; // Add an ID field to uniquely identify each user
@@ -74,6 +75,7 @@ const UserPage: React.FC = () => {
           </div>  
         </div>
       )}
+      <Footer/>
     </>
   );
 };
