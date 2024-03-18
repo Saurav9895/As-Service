@@ -6,6 +6,7 @@ import Topbar from '@/components/Topbar/Topbar';
 import { useRouter } from 'next/router';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Footer from '@/components/Footer/Footer';
+import Image from 'next/image';
 
 type Service = {
   id: string; // Add an ID field to uniquely identify each service
@@ -53,14 +54,36 @@ const Servicelist: React.FC = () => {
       {user && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-10">
           {uniqueServices.map((service, index) => (
-            <div key={service.id} className="p-4 bg-white shadow-2xl rounded-md">
-              <h2 className="text-2xl font-bold mb-2">{service.service}</h2>
+            <div key={service.id} className="p-4 bg-white shadow-2xl rounded-md ">
+              {service.service === "Doctor" && (
+          <Image src="/doctor.jpg" alt="Doctor" height={500} width={500}/>
+        )}
+               {service.service === "Engineer" && (
+          <Image src="/engineers.jpg" alt="Engineer" height={500} width={500} />
+        )}
+              {service.service === "Plumber" && (
+          <Image src="/plumber.jpg" alt="Plumber" height={500} width={500}/>
+        )}
+               {service.service === "Painter" && (
+          <Image src="/painter.jpg" alt="Painter" height={500} width={500}/>
+        )}
+               {service.service === "Electrician" && (
+          <Image src="/electrician.jpg" alt="Electrician" height={500} width={500}/>
+        )}
+         {service.service !== "Doctor" &&
+          service.service !== "Engineer" &&
+          service.service !== "Plumber" &&
+          service.service !== "Painter" &&
+          service.service !== "Electrician" && (
+          <img src="/service.jpg" alt="Service" height={500} width={500}/>
+        )}
+              <h2 className="text-2xl font-bold mb-2 text-center ">{service.service}</h2>
               <button 
                 onClick={() => handleServiceDetails(service.service)} 
-                className="bg-brand-orange hover:bg-brand-orange-s text-white py-2 px-3 rounded"
-              >
-                View More Details
-              </button>
+                className="bg-brand-orange hover:bg-brand-orange-s text-white py-2 px-3 rounded block mx-auto"
+            >
+                Find Service Providers
+            </button>
             </div>
           ))}
         </div>
@@ -75,7 +98,6 @@ const Servicelist: React.FC = () => {
           </div>
         </>
       )}
-      <Footer/>
     </>
   );
 };

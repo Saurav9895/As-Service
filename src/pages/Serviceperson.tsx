@@ -72,7 +72,7 @@ const Serviceperson: React.FC = () => {
                 <div className="flex justify-between flex-row pt-[44px] items-center -mt-20 pl-[32px]">
                     <div className="detailsname">
                         <div className="relative bg-white w-[158px] h-[158px] border border-gray-200 rounded-full ">
-                        <Image src="/avatar.png" alt="..." className="avatar-img rounded-circle " height={500} width={500}/>
+                        <Image src='/avatar.png' alt="..." className="avatar-img rounded-circle" height={500} width={500} />
                         </div>
                         <div className="cen">
                         <div className='detailsfornameanddesignation'>
@@ -98,44 +98,44 @@ const Serviceperson: React.FC = () => {
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Contact Number:  {serviceDetails.Number}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Contact Number:</b>  {serviceDetails.Number}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Service Charge:  {serviceDetails.Charge}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Service Charge:</b>  {serviceDetails.Charge}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Who He/She is:  {serviceDetails.service}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Who He/She is:</b>  {serviceDetails.service}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border-x border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Gender:  {serviceDetails.gender}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Gender:</b>  {serviceDetails.gender}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Qualification:  {serviceDetails.Qualification} </span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Qualification:</b>  {serviceDetails.Qualification} </span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Address: {serviceDetails.Streetaddress + ' ,' + (serviceDetails.Streetline2 ? ' ' + serviceDetails.Streetline2 : '')}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Address:</b> {serviceDetails.Streetaddress +  + (serviceDetails.Streetline2 ? ' ' + serviceDetails.Streetline2 : ' ')}</span>
                 
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">City: {serviceDetails.City}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>City:</b> {serviceDetails.City}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">State/Provience: {serviceDetails.State}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>State/Provience:</b> {serviceDetails.State}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Postal/Zip Code: {serviceDetails.Postal}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Postal/Zip Code:</b> {serviceDetails.Postal}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
             <li className="w-full items-center border border-gray-200 hover:bg-[#FCFCFC] h-[65px] flex-1 bg-white px-[20px] flex-col flex justify-between md:flex-row gap-[10px] md:gap-[50px]">
-                <span className="font-medium text-[13px] text-[#414141]">Servie They Provide: {serviceDetails.About}</span>
+                <span className="font-medium text-[13px] text-[#414141]"><b>Servie They Provide:</b> {serviceDetails.About}</span>
                 {/* <button className="justify-center items-center flex border border-[#E3E3E3] h-[26px] w-[33px] rounded-[5px]"><MoreOutlined style={{ rotate: "90deg", stroke: "black", strokeWidth: 50 }} /></button> */}
             </li>
         </main>

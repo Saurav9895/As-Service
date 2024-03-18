@@ -43,6 +43,8 @@ const Forms:React.FC<FormsProps> = () => {
 			});
 			
 			};
+        
+        
 
 			const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 e.preventDefault();
@@ -177,6 +179,8 @@ const Forms:React.FC<FormsProps> = () => {
                                 
                                 </div>
 
+                               
+
                                 <div className="aboutyou">
                                 <div className="leftmg">Please Tell me about you and what kind of service you provide : <span className="red">*</span></div> <br />    
                                     <div className="abt">
@@ -184,6 +188,11 @@ const Forms:React.FC<FormsProps> = () => {
     
                                     </div>                   
                                 </div>
+
+                                <hr className="solid1"/>
+                                
+                                <input type="checkbox" id="acceptTerms" name="acceptTerms" className="checkmark" required/>
+                                 <span> Once Registered, the details cannot be changed </span> <span className="red">*</span>
 
                                 <hr className="solid1"/>
                                 <div className="bc">

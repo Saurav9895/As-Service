@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import useHasMounted from "@/hooks/useHasMounted";
 
 
 type HomapageProps = {
@@ -7,7 +8,9 @@ type HomapageProps = {
 };
 
 const Homapage:React.FC<HomapageProps> = () => {
+  const hasMounted = useHasMounted();
 
+	if (!hasMounted) return null;
     
     return(
         <div className="mainbody">
